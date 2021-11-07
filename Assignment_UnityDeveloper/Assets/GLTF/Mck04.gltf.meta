@@ -18,7 +18,4 @@ ScriptedImporter:
     defaultMagFilterMode: 9729
     anisotropicFilterLevel: 1
   assetDependencies: []
-  reportItems:
-  - type: 2
-    code: 17
-    messages: []
+  reportItems: []
