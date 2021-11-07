@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PinchZoom : MonoBehaviour
+public class Input_Controller: MonoBehaviour
 {
     public float perspectiveZoomSpeed = 0.5f; // The rate of change of the field of view in perspective mode.
     public float orthoZoomSpeed = 0.5f; // The rate of change of the orthographic size in orthographic mode.
