@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LerpCamera : MonoBehaviour
 {
+    public Camera camera;
     public Transform InitialPos;
 
     public float timeStartedLerping;
@@ -17,21 +18,24 @@ public class LerpCamera : MonoBehaviour
     private Quaternion startRotat;
 
     private bool shouldLerp = false;
+    private float cameraTargetView;
+    private float cameraCurrentView;
 
+    private bool cameraViewInPos = false;
     // Start is called before the first frame update
     void Start()
     {
+        //Saving camera info when application started.
         targetPos = InitialPos.position;
         targetRotat = InitialPos.rotation;
-
-        //endPosition = new Vector3(InitialPos.position.x, InitialPos.position.y, InitialPos.position.z);
-        //StartLerping();
+        cameraTargetView = (camera.orthographic) ? camera.orthographicSize : camera.fieldOfView;
     }
 
     public void StartLerping()
     {
         startPos = transform.position;
         startRotat = transform.rotation;
+        cameraCurrentView = (camera.orthographic) ? camera.orthographicSize : camera.fieldOfView;
 
         timeStartedLerping = Time.time;
         shouldLerp = true;
@@ -45,9 +49,24 @@ public class LerpCamera : MonoBehaviour
             transform.position = Lerp_Pos(startPos, targetPos, timeStartedLerping, lerpTime_Pos);
             transform.rotation = Lerp_Rotation(startRotat, targetRotat, timeStartedLerping, lerpTime_Pos);
 
+            if (camera.orthographic)
+            {
+                camera.orthographicSize = LerpFloat(cameraCurrentView, cameraTargetView);
+                if (camera.orthographicSize == cameraTargetView) cameraViewInPos = true;
+            }
+
+            else
+            {
+                camera.fieldOfView = LerpFloat(cameraCurrentView, cameraTargetView);
+                if (camera.fieldOfView == cameraTargetView) cameraViewInPos = true;
+            }
+
+
             if ((transform.position == targetPos) &&
-                (transform.rotation == targetRotat)) 
+                (transform.rotation == targetRotat) && cameraViewInPos)
+            {
                 shouldLerp = false;
+            }
         }
     }
 
@@ -68,4 +87,14 @@ public class LerpCamera : MonoBehaviour
 
         return result;
     }
+
+    public float LerpFloat(float start, float end, float lerpTime = 1)
+    {
+        float timeSinceStarted = Time.time - timeStartedLerping;
+        float percentageComplete = timeSinceStarted / lerpTime;
+
+        return Mathf.Lerp(start, end, percentageComplete);
+
+    }
+    
 }
