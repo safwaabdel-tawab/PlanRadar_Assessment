@@ -7,21 +7,32 @@ using UnityEngine;
 /// </summary>
 public class DownloadingModel : MonoBehaviour
 {
-    public bool DownloadFinished
+    [SerializeField]
+    GameEvent downloadFinishedEvent;
+
+    private bool _downloadIsFinished;
+    public bool DownloadIsFinished
     {
-        set; get;
+        set
+        {
+            _downloadIsFinished = value;
+            if (value) downloadFinishedEvent.Raise();
+        }
+        get
+        {
+            return _downloadIsFinished;
+        }
     }
     void Start()
     {
-        DownloadFinished = false;
+        DownloadIsFinished = false;
         StartCoroutine(StillDownloading());
     }
 
     IEnumerator StillDownloading()
     {
-        int count = transform.childCount;
-        yield return new WaitUntil(() => count > 0);
+        yield return new WaitUntil(() => transform.childCount > 0);
 
-        DownloadFinished = true;
+        DownloadIsFinished = true;
     }
 }
