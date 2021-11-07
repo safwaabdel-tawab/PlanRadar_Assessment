@@ -6,7 +6,9 @@ public class PinchZoom : MonoBehaviour
     public float orthoZoomSpeed = 0.5f; // The rate of change of the orthographic size in orthographic mode.
 
     [SerializeField] private Camera camera;
+    [SerializeField] private Transform target;
 
+    private Vector3 previousPosition;
     void Update()
     {
         // If there are two touches on the device...
@@ -43,6 +45,27 @@ public class PinchZoom : MonoBehaviour
 
                 // Clamp the field of view to make sure it's between 0 and 180.
                 camera.fieldOfView = Mathf.Clamp(camera.fieldOfView, 0.1f, 179.9f);
+            }
+        }
+        else if (Input.touchCount == 1)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                previousPosition = camera.ScreenToViewportPoint(Input.mousePosition);
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                Vector3 direction = previousPosition - camera.ScreenToViewportPoint(Input.mousePosition);
+
+                // camera.transform.position = new Vector3();
+                camera.transform.position = target.position;
+                camera.transform.Rotate(new Vector3(1, 0, 0), direction.y * 180);
+                camera.transform.Rotate(new Vector3(0, 1, 0), -direction.x * 180, Space.World);
+                camera.transform.Translate(new Vector3(0, 0, -160));
+
+                previousPosition = camera.ScreenToViewportPoint(Input.mousePosition);
+
             }
         }
     }

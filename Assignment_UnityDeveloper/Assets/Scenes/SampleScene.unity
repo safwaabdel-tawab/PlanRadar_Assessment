@@ -1830,6 +1830,7 @@ MonoBehaviour:
   perspectiveZoomSpeed: 0.5
   orthoZoomSpeed: 0.5
   camera: {fileID: 963194227}
+  target: {fileID: 223974228}
 --- !u!114 &1412332596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,7 +1838,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412332593}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a4dfd48724322241884153f89b8d461, type: 3}
   m_Name: 
