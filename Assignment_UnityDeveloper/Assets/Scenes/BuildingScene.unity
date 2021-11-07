@@ -457,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8771091787928289351, guid: fea3096254b8b66468490df4365551ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -4161369568681901532, guid: fea3096254b8b66468490df4365551ec, type: 3}
@@ -812,7 +812,7 @@ MonoBehaviour:
   InitialPos: {fileID: 963194228}
   timeStartedLerping: 0
   lerpTime_Pos: 1
-  lerpTime_Rotat: 0
+  lerpTime_Rotat: 1
 --- !u!1 &1412332593
 GameObject:
   m_ObjectHideFlags: 0
