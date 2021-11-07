@@ -128,30 +128,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8771091787928289351, guid: fea3096254b8b66468490df4365551ec, type: 3}
   m_PrefabInstance: {fileID: 998421096}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &223974227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &223974228 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3910990755373119420, guid: fea3096254b8b66468490df4365551ec, type: 3}
+  m_PrefabInstance: {fileID: 998421096}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223974226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7a5ada96be5144790770293dda5490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLayer:
-    m_Bits: 256
-  rotationRate: 0.3
-  xRotation: 1
-  yRotation: 1
-  invertX: 0
-  invertY: 0
-  touchAnywhere: 0
-  m_previousX: 0
-  m_previousY: 0
-  m_camera: {fileID: 0}
-  m_rotating: 0
 --- !u!65 &223974229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1812,6 +1793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412332594}
   - component: {fileID: 1412332595}
+  - component: {fileID: 1412332596}
   m_Layer: 0
   m_Name: Input Controller
   m_TagString: Untagged
@@ -1848,6 +1830,20 @@ MonoBehaviour:
   perspectiveZoomSpeed: 0.5
   orthoZoomSpeed: 0.5
   camera: {fileID: 963194227}
+--- !u!114 &1412332596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412332593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4dfd48724322241884153f89b8d461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 963194227}
+  target: {fileID: 223974228}
 --- !u!850595691 &1776572740
 LightingSettings:
   m_ObjectHideFlags: 0
