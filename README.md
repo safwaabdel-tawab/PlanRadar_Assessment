@@ -1,6 +1,6 @@
 # PlanRadar_Assessment
 
-### What to expect from the app?
+## What to expect from the app?
 #### What will you see?
 - At the start you will see the unity logo.
 - Then the loading screen followed by another scene, which has the building model and a reset button on the top left, and the frame per second on the top right
@@ -15,7 +15,7 @@
 
 Note: This project was tested on editor and on android device only. 
 
-### How to build on an android device?
+## How to build on an android device?
 - The mobile should be connected with the device with a usb.
 - Change the choice of “Charge this device” to “Transfer photo (PTP)”, from mobile (android device).
 
@@ -35,7 +35,7 @@ Note: You can see in the build settings window that the target platform selected
 
 ![loading](https://user-images.githubusercontent.com/17506857/140720652-3f84e89f-17a2-4d32-83c5-d86f07355a31.png)
 
-### How to run the project in editor mode?
+## How to run the project in editor mode?
 - Make sure that the “LoadingScene” is open.
 - You could find it here (“Project” window=> Assets=> Scenes=> “LoadingScene”).
 
@@ -45,9 +45,11 @@ Note: You can see in the build settings window that the target platform selected
 
 ![Play](https://user-images.githubusercontent.com/17506857/140721253-09943c5c-0c30-4f11-bac5-f4b30ebb88fa.PNG)
 
-### How to switch to another platform?
+## How to switch to another platform?
 - Select the platform you want.
 - Click on the “Switch Platform” button. 
 
 ![switch](https://user-images.githubusercontent.com/17506857/140721679-d8245798-1baf-4b6f-81e3-c8313485eff3.PNG)
 
+## Known Issue
+The building at some point refuses any gestures (rotating, zooming).
