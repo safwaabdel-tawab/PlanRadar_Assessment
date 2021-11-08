@@ -10,6 +10,7 @@ With 2 fingers touch (pinch): you will be able to zoom in and out to/from the ce
 With one finger touch (swiping): you will be able to rotate the building.
 When the “Reset” button is clicked: the whole building will lerp to its initial view in a smooth way.
 
+![building](https://user-images.githubusercontent.com/17506857/140717957-a8412450-07da-4f15-bdd4-9e5ff440bd19.PNG)
 
 
 Note: This project was tested on editor and on android device only. 
