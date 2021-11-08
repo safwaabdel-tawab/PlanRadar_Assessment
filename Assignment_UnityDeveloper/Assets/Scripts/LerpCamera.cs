@@ -22,7 +22,7 @@ public class LerpCamera : MonoBehaviour
     private float cameraCurrentView;
 
     private bool cameraViewInPos = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         //Saving camera info when application started.
@@ -41,7 +41,6 @@ public class LerpCamera : MonoBehaviour
         shouldLerp = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (shouldLerp)
@@ -96,5 +95,4 @@ public class LerpCamera : MonoBehaviour
         return Mathf.Lerp(start, end, percentageComplete);
 
     }
-    
 }

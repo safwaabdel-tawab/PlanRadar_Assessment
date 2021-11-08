@@ -58,7 +58,6 @@ public class Input_Controller: MonoBehaviour
             {
                 Vector3 direction = previousPosition - camera.ScreenToViewportPoint(Input.mousePosition);
 
-                // camera.transform.position = new Vector3();
                 camera.transform.position = target.position;
                 camera.transform.Rotate(new Vector3(1, 0, 0), direction.y * 180);
                 camera.transform.Rotate(new Vector3(0, 1, 0), -direction.x * 180, Space.World);
