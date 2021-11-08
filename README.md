@@ -52,4 +52,4 @@ Note: You can see in the build settings window that the target platform selected
 ![switch](https://user-images.githubusercontent.com/17506857/140721679-d8245798-1baf-4b6f-81e3-c8313485eff3.PNG)
 
 ## Known Issue
-The building at some point refuses any gestures (rotating, zooming).
+The building at some point refuses any gestures (rotating, zooming), close the app and open it again.
